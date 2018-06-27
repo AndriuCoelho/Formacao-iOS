@@ -16,6 +16,7 @@ class PacotesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var labelTitulo: UILabel!
     @IBOutlet weak var labelQuantidadeDias: UILabel!
     @IBOutlet weak var labelPreco: UILabel!
+    @IBOutlet weak var botaoFavoritar: UIButton?
     
     // MARK: - Métodos
     
@@ -24,6 +25,8 @@ class PacotesCollectionViewCell: UICollectionViewCell {
         labelQuantidadeDias.text = "\(pacoteViagem.viagem.quantidadeDeDias) dias"
         labelPreco.text = "R$ \(pacoteViagem.viagem.preco)"
         imagemViagem.image = UIImage(named: pacoteViagem.viagem.caminhoDaImagem)
+        
+        botaoFavoritar?.setImage(pacoteViagem.favoritado ? UIImage(named: "icon_favorite_filled") : UIImage(named: "icon_favorite"), for: .normal)
         
         layer.borderWidth = 0.5
         layer.borderColor = UIColor(red: 85.0/255.0, green: 85.0/255.0, blue: 85.0/255.0, alpha: 1).cgColor

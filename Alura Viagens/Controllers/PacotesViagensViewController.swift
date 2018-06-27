@@ -30,10 +30,25 @@ class PacotesViagensViewController: UIViewController, UICollectionViewDataSource
         labelContadorPacotes.text = atualizaContadorLabel()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        verificaPacotesFavoritos()
+    }
+    
     // MARK: - Métodos
     
     func atualizaContadorLabel() -> String {
         return listaViagens.count == 1 ? "1 pacote encontrado" : "\(listaViagens.count) pacotes encontrados"
+    }
+    
+    func verificaPacotesFavoritos() {
+        let favoritos = PacoteViagemDao().carrega()
+        favoritos.forEach({ filtraPacoteFavorito(Int($0.id)) })
+    }
+    
+    func filtraPacoteFavorito(_ id: Int) {
+        let pacoteFavorito = listaViagens.filter({ $0.viagem.id == id })
+        pacoteFavorito.first?.favoritado = true
+        colecaoPacotesViagens.reloadData()
     }
     
     // MARK: - UISearchBarDelegate
@@ -55,6 +70,7 @@ class PacotesViagensViewController: UIViewController, UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let celulaPacote = collectionView.dequeueReusableCell(withReuseIdentifier: "celulaPacote", for: indexPath) as! PacotesCollectionViewCell
+        celulaPacote.botaoFavoritar?.tag = indexPath.item
         let pacoteAtual = listaViagens[indexPath.item]
         celulaPacote.configuraCelula(pacoteAtual)
         
@@ -75,5 +91,14 @@ class PacotesViagensViewController: UIViewController, UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return UIDevice.current.userInterfaceIdiom == .phone ? CGSize(width: collectionView.bounds.width/2-20, height: 160) : CGSize(width: collectionView.bounds.width/3-20, height: 250)
+    }
+    
+    // MARK: - IBActions
+    
+    @IBAction func botaoFavoritar(_ sender: UIButton) {
+        let pacote = listaViagens[sender.tag]
+        pacote.favoritado = !pacote.favoritado
+        colecaoPacotesViagens.reloadData()
+        PacoteViagemDao().manipulaViagem(pacote)
     }
 }
