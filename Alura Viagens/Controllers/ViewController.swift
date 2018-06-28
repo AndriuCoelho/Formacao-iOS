@@ -42,8 +42,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
+        cell.tag = indexPath.row
         let viagemAtual = listaViagens[indexPath.row]
         cell.configuraCelula(viagemAtual)
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(abrirMapa(_:)))
+        cell.addGestureRecognizer(longPress)
         
         return cell
     }
@@ -52,5 +55,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.phone ? 175 : 260
+    }
+    
+    // MARK: - UILongPressGestureRecognizer
+    
+    @objc func abrirMapa(_ gesture: UILongPressGestureRecognizer) {
+        if gesture.state == .began {
+            let viagemSelecionada = listaViagens[(gesture.view?.tag)!]
+            let mapaViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mapa") as! MapaViewController
+            mapaViewController.localizacao = viagemSelecionada.localizacao
+            navigationController?.pushViewController(mapaViewController, animated: true)
+        }
     }
 }

@@ -50,6 +50,16 @@ class FavoritosViewController: UIViewController, UICollectionViewDataSource, UIC
         return celulaPacote
     }
     
+    // MARK: - UICollectionViewDelegate
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let pacote = listaViagens[indexPath.item]
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "detalhes") as! DetalhesViagemViewController
+        controller.pacoteSelecionado = pacote
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
     // MARK: - UICollectionViewLayout
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

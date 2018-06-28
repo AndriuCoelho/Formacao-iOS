@@ -15,13 +15,15 @@ class Viagem: NSObject {
     let quantidadeDeDias: Int
     let preco: String
     let caminhoDaImagem: String
+    let localizacao: String
     
-    init(id: Int, titulo: String, quantidadeDeDias: Int, preco: String, caminhoDaImagem: String) {
+    init(id: Int, titulo: String, quantidadeDeDias: Int, preco: String, caminhoDaImagem: String, localizacao: String) {
         self.id = id
         self.titulo = titulo
         self.quantidadeDeDias = quantidadeDeDias
         self.preco = preco
         self.caminhoDaImagem = caminhoDaImagem
+        self.localizacao = localizacao
     }
 
 }

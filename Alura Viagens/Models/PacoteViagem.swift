@@ -33,7 +33,7 @@ class PacoteViagem: NSObject {
             guard let preco = pacote.preco else { return [] }
             guard let caminhoImagem = pacote.caminhoDaImagem else { return [] }
             
-            let novaViagem = Viagem(id: id, titulo: titulo, quantidadeDeDias: quantidadeDias, preco: preco, caminhoDaImagem: caminhoImagem)
+            let novaViagem = Viagem(id: id, titulo: titulo, quantidadeDeDias: quantidadeDias, preco: preco, caminhoDaImagem: caminhoImagem, localizacao: "")
             
             guard let hotel = pacote.nomeDoHotel else { return [] }
             guard let descricao = pacote.descricao else { return [] }
