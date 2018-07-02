@@ -30,7 +30,6 @@ class DetalhesViagemViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(redimensionaScrollView(_:)), name: .UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(teste(_:)), name: .UIKeyboardDidHide, object: self)
         configuraOutlets()
     }
     
@@ -49,10 +48,6 @@ class DetalhesViagemViewController: UIViewController {
         if let frameTeclado: NSValue = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue {
             scrollViewPrincipal.contentSize = CGSize(width: scrollViewPrincipal.frame.width, height: scrollViewPrincipal.frame.height + frameTeclado.cgRectValue.height)
         }
-    }
-    
-    @objc func teste(_ notification: Notification) {
-        view.layoutIfNeeded()
     }
     
     @objc func exibeDataTextField(_ sender: UIDatePicker) {

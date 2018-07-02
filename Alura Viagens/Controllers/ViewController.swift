@@ -18,13 +18,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     // MARK: - Atributos
     
-    let listaViagens:[Viagem] = ViagemDao().retornaTodasAsViagens()
+    var listaViagens:[Viagem] = []
     
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configuraViews()
+        getViagens()
     }
     
     // MARK: - Métodos
@@ -32,6 +33,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func configuraViews() {
         viewPacotes.layer.cornerRadius = 10
         viewHoteis.layer.cornerRadius = 10
+    }
+    
+    // MARK: - API
+    
+    func getViagens() {
+        ViagemAPI().getViagens(completion: { (viagens) in
+            self.listaViagens = viagens
+            self.tabelaViagens.reloadData()
+        }) { (error) in
+            print(error.localizedDescription)
+        }
     }
     
     // MARK: - UITableViewDataSource

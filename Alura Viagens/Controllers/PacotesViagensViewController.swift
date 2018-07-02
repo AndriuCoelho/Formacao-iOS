@@ -37,18 +37,23 @@ class PacotesViagensViewController: UIViewController, UICollectionViewDataSource
     // MARK: - Métodos
     
     func atualizaContadorLabel() -> String {
-        return listaViagens.count == 1 ? "1 pacote encontrado" : "\(listaViagens.count) pacotes encontrados"
+        if listaViagens.count == 1 {
+            return "1 pacote encontrado"
+        }
+        else {
+            return "\(listaViagens.count) pacotes encontrados"
+        }
     }
     
     func verificaPacotesFavoritos() {
         let favoritos = PacoteViagemDao().carrega()
         favoritos.forEach({ filtraPacoteFavorito(Int($0.id)) })
+        colecaoPacotesViagens.reloadData()
     }
     
     func filtraPacoteFavorito(_ id: Int) {
         let pacoteFavorito = listaViagens.filter({ $0.viagem.id == id })
         pacoteFavorito.first?.favoritado = true
-        colecaoPacotesViagens.reloadData()
     }
     
     // MARK: - UISearchBarDelegate
@@ -99,6 +104,6 @@ class PacotesViagensViewController: UIViewController, UICollectionViewDataSource
         let pacote = listaViagens[sender.tag]
         pacote.favoritado = !pacote.favoritado
         colecaoPacotesViagens.reloadData()
-        PacoteViagemDao().manipulaViagem(pacote)
+        PacoteViagemDao().alteraFavorito(pacote)
     }
 }

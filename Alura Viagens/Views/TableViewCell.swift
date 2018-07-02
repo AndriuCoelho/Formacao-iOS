@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class TableViewCell: UITableViewCell {
     
@@ -17,9 +18,18 @@ class TableViewCell: UITableViewCell {
     
     func configuraCelula(_ viagem:Viagem) {
         labelTitulo.text = viagem.titulo
-        labelQuantidadeDias.text = viagem.quantidadeDeDias == 1 ? "1 dia" : "\(viagem.quantidadeDeDias) dias"
+        
+        if viagem.quantidadeDeDias == 1 {
+            labelQuantidadeDias.text = "1 dia"
+        }
+        else {
+            labelQuantidadeDias.text = "\(viagem.quantidadeDeDias) dias"
+        }
+        
         labelPreco.text = "R$ \(viagem.preco)"
-        imagemViagem.image = UIImage(named: viagem.caminhoDaImagem)
+        
+        guard let urlDaImagem = URL(string: viagem.caminhoDaImagem) else { return }
+        imagemViagem.af_setImage(withURL: urlDaImagem)
         
         imagemViagem.layer.cornerRadius = 10
         imagemViagem.layer.masksToBounds = true

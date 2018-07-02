@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		030997B520E12DF0009ECA38 /* PacotesViagensViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030997B420E12DF0009ECA38 /* PacotesViagensViewController.swift */; };
 		030B69CF20E153BA006B5424 /* DetalhesViagemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030B69CE20E153BA006B5424 /* DetalhesViagemViewController.swift */; };
+		031F29BE20E6A043000FE5A6 /* ViagemAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031F29BD20E6A043000FE5A6 /* ViagemAPI.swift */; };
 		03256CEA20E2760E0012963A /* FavoritosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03256CE920E2760E0012963A /* FavoritosViewController.swift */; };
 		03256DCD20E2A3380012963A /* icon_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 03256DB920E2A3380012963A /* icon_back.png */; };
 		03256DCE20E2A3380012963A /* icon_search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03256DBA20E2A3380012963A /* icon_search@2x.png */; };
@@ -41,14 +42,15 @@
 		0388B00620DC156E005F6A7C /* PacotesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0388B00520DC156E005F6A7C /* PacotesCollectionViewCell.swift */; };
 		0388B00820DC1763005F6A7C /* Viagem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0388B00720DC1763005F6A7C /* Viagem.swift */; };
 		0388B00A20DC177A005F6A7C /* PacoteViagem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0388B00920DC177A005F6A7C /* PacoteViagem.swift */; };
-		0388B00C20DC1858005F6A7C /* ViagemDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0388B00B20DC1858005F6A7C /* ViagemDao.swift */; };
 		0388B03120DC1B62005F6A7C /* PacoteViagemDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0388B03020DC1B62005F6A7C /* PacoteViagemDao.swift */; };
 		039B31D520E3FEC600B51C37 /* MapaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039B31D420E3FEC600B51C37 /* MapaViewController.swift */; };
+		CED89AF12F8FD718ED0AF21A /* Pods_Alura_Viagens.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58664C70EF00A68FE75FA5D3 /* Pods_Alura_Viagens.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		030997B420E12DF0009ECA38 /* PacotesViagensViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacotesViagensViewController.swift; sourceTree = "<group>"; };
 		030B69CE20E153BA006B5424 /* DetalhesViagemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesViagemViewController.swift; sourceTree = "<group>"; };
+		031F29BD20E6A043000FE5A6 /* ViagemAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViagemAPI.swift; sourceTree = "<group>"; };
 		03256CE920E2760E0012963A /* FavoritosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritosViewController.swift; sourceTree = "<group>"; };
 		03256DB920E2A3380012963A /* icon_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_back.png; sourceTree = "<group>"; };
 		03256DBA20E2A3380012963A /* icon_search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_search@2x.png"; sourceTree = "<group>"; };
@@ -83,9 +85,11 @@
 		0388B00520DC156E005F6A7C /* PacotesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacotesCollectionViewCell.swift; sourceTree = "<group>"; };
 		0388B00720DC1763005F6A7C /* Viagem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Viagem.swift; sourceTree = "<group>"; };
 		0388B00920DC177A005F6A7C /* PacoteViagem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacoteViagem.swift; sourceTree = "<group>"; };
-		0388B00B20DC1858005F6A7C /* ViagemDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViagemDao.swift; sourceTree = "<group>"; };
 		0388B03020DC1B62005F6A7C /* PacoteViagemDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacoteViagemDao.swift; sourceTree = "<group>"; };
 		039B31D420E3FEC600B51C37 /* MapaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapaViewController.swift; sourceTree = "<group>"; };
+		58664C70EF00A68FE75FA5D3 /* Pods_Alura_Viagens.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Alura_Viagens.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		784A2334669F1A2DBCB64BAC /* Pods-Alura Viagens.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alura Viagens.release.xcconfig"; path = "Pods/Target Support Files/Pods-Alura Viagens/Pods-Alura Viagens.release.xcconfig"; sourceTree = "<group>"; };
+		D20AAF9EBE5176F8A194B6E1 /* Pods-Alura Viagens.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alura Viagens.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Alura Viagens/Pods-Alura Viagens.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CED89AF12F8FD718ED0AF21A /* Pods_Alura_Viagens.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +136,8 @@
 			children = (
 				03715B2320DC050800F2250A /* Alura Viagens */,
 				03715B2220DC050800F2250A /* Products */,
+				4A4F848C6E476CB0F0D037E2 /* Pods */,
+				0946631722DA5E44939F1B6B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -163,8 +170,8 @@
 			isa = PBXGroup;
 			children = (
 				0388B00720DC1763005F6A7C /* Viagem.swift */,
+				031F29BD20E6A043000FE5A6 /* ViagemAPI.swift */,
 				0388B00920DC177A005F6A7C /* PacoteViagem.swift */,
-				0388B00B20DC1858005F6A7C /* ViagemDao.swift */,
 				0388B03020DC1B62005F6A7C /* PacoteViagemDao.swift */,
 			);
 			path = Models;
@@ -192,6 +199,23 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		0946631722DA5E44939F1B6B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				58664C70EF00A68FE75FA5D3 /* Pods_Alura_Viagens.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4A4F848C6E476CB0F0D037E2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D20AAF9EBE5176F8A194B6E1 /* Pods-Alura Viagens.debug.xcconfig */,
+				784A2334669F1A2DBCB64BAC /* Pods-Alura Viagens.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -199,9 +223,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03715B3620DC050A00F2250A /* Build configuration list for PBXNativeTarget "Alura Viagens" */;
 			buildPhases = (
+				185D954CFEEE4DC56D31E950 /* [CP] Check Pods Manifest.lock */,
 				03715B1D20DC050800F2250A /* Sources */,
 				03715B1E20DC050800F2250A /* Frameworks */,
 				03715B1F20DC050800F2250A /* Resources */,
+				D98104C252E1348EC474AF1A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -278,6 +304,47 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		185D954CFEEE4DC56D31E950 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Alura Viagens-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D98104C252E1348EC474AF1A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Alura Viagens/Pods-Alura Viagens-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Alura Viagens/Pods-Alura Viagens-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		03715B1D20DC050800F2250A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -293,8 +360,8 @@
 				03715B3F20DC06BB00F2250A /* ViewController.swift in Sources */,
 				0388B03120DC1B62005F6A7C /* PacoteViagemDao.swift in Sources */,
 				03715B2520DC050800F2250A /* AppDelegate.swift in Sources */,
-				0388B00C20DC1858005F6A7C /* ViagemDao.swift in Sources */,
 				039B31D520E3FEC600B51C37 /* MapaViewController.swift in Sources */,
+				031F29BE20E6A043000FE5A6 /* ViagemAPI.swift in Sources */,
 				0388B00820DC1763005F6A7C /* Viagem.swift in Sources */,
 				03715B2D20DC050800F2250A /* Alura_Viagens.xcdatamodeld in Sources */,
 			);
@@ -438,6 +505,7 @@
 		};
 		03715B3720DC050A00F2250A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D20AAF9EBE5176F8A194B6E1 /* Pods-Alura Viagens.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -456,6 +524,7 @@
 		};
 		03715B3820DC050A00F2250A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 784A2334669F1A2DBCB64BAC /* Pods-Alura Viagens.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

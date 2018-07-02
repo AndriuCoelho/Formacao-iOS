@@ -22,7 +22,7 @@ class PacoteViagemDao: NSObject {
     
     // MARK: - Metodos
     
-    func manipulaViagem(_ pacote: PacoteViagem) {
+    func alteraFavorito(_ pacote: PacoteViagem) {
         if pacote.favoritado {
             salva(pacote)
         }
