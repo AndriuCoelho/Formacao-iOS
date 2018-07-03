@@ -32,7 +32,7 @@ class FavoritosViewController: UIViewController, UICollectionViewDataSource, UIC
     
     func carregaPacotesFavoritos() {
         let pacotes = PacoteViagemDao().carrega()
-        listaViagens = PacoteViagem.serializaPacoteViagem(pacotes)
+        listaViagens = PacoteViagem.serializaPacoteViagemEntity(pacotes)
         colecaoPacotesViagens.reloadData()
     }
     

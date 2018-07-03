@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class PacotesCollectionViewCell: UICollectionViewCell {
     
@@ -24,7 +25,9 @@ class PacotesCollectionViewCell: UICollectionViewCell {
         labelTitulo.text = pacoteViagem.viagem.titulo
         labelQuantidadeDias.text = "\(pacoteViagem.viagem.quantidadeDeDias) dias"
         labelPreco.text = "R$ \(pacoteViagem.viagem.preco)"
-        imagemViagem.image = UIImage(named: pacoteViagem.viagem.caminhoDaImagem)
+        
+        guard let urlDaImagem = URL(string: pacoteViagem.viagem.caminhoDaImagem) else { return }
+        imagemViagem.af_setImage(withURL: urlDaImagem)
         
         botaoFavoritar?.setImage(pacoteViagem.favoritado ? UIImage(named: "icon_favorite_filled") : UIImage(named: "icon_favorite"), for: .normal)
         

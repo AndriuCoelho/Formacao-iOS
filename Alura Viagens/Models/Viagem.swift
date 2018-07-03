@@ -30,11 +30,7 @@ class Viagem: NSObject {
         self.localizacao = localizacao
     }
     
-    convenience override init() {
-        self.init(id: 0, titulo: "", quantidadeDeDias: 0, preco: "", caminhoDaImagem: "", localizacao: "")
-    }
-    
-    func serializeObject(_ json: [[String: Any]]) -> [Viagem] {
+    class func serializeObject(_ json: [[String: Any]]) -> [Viagem] {
         var viagens: [Viagem] = []
         for viagem in json {
             guard let id = viagem["id"] as? Int else { return [] }

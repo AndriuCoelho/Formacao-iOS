@@ -18,16 +18,15 @@ class PacotesViagensViewController: UIViewController, UICollectionViewDataSource
     
     // MARK: - Atributos
     
-    let listaComTodasViagens: [PacoteViagem] = PacoteViagemDao().retornaTodasAsViagens()
+    var listaComTodasViagens: [PacoteViagem] = []
     var listaViagens: [PacoteViagem] = []
     
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getPacotes()
         pesquisarViagens.delegate = self
-        listaViagens = listaComTodasViagens
-        labelContadorPacotes.text = atualizaContadorLabel()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,6 +53,19 @@ class PacotesViagensViewController: UIViewController, UICollectionViewDataSource
     func filtraPacoteFavorito(_ id: Int) {
         let pacoteFavorito = listaViagens.filter({ $0.viagem.id == id })
         pacoteFavorito.first?.favoritado = true
+    }
+    
+    // MARK: - API
+    
+    func getPacotes() {
+        PacoteViagemAPI().getPacotes(completion: { (pacotes) in
+            self.listaComTodasViagens = pacotes
+            self.listaViagens = pacotes
+            self.labelContadorPacotes.text = self.atualizaContadorLabel()
+            self.colecaoPacotesViagens.reloadData()
+        }) { (error) in
+            print(error.localizedDescription)
+        }
     }
     
     // MARK: - UISearchBarDelegate

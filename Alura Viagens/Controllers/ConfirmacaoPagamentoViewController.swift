@@ -36,7 +36,9 @@ class ConfirmacaoPagamentoViewController: UIViewController {
     func configuraOutlets() {
         guard let pacote = pacoteComprado else { return }
         
-        imagemPacoteViagem.image = UIImage(named: pacote.viagem.caminhoDaImagem)
+        guard let urlDaImagem = URL(string: pacote.viagem.caminhoDaImagem) else { return }
+        imagemPacoteViagem.af_setImage(withURL: urlDaImagem)
+        
         labelHotelPacoteViagem.text = pacote.nomeDoHotel
         labelTituloPacoteViagem.text = pacote.viagem.titulo.uppercased()
         labelDataPacoteViagem.text = pacote.dataViagem
